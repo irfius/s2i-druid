@@ -10,7 +10,7 @@ $ s2i build druid/ irfius/openshift-druid:1 irfius/s2i-druid:0.15.1
 ```
 
 ### Running the application with docker-compose 
-TODO
+Run the hdfs from https://github.com/big-data-europe/docker-hadoop
 
 ### Running the application with openshift 
 TODO

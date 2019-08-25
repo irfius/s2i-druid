@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 echo "---> Assemble START"
 
@@ -15,7 +15,6 @@ fi
 
 # move the application source
 echo "---> Building and installing application from source..."
-chmod +x /tmp/src/*
 mv /tmp/src/* /app/druid
 
 echo "---> Assemble END"

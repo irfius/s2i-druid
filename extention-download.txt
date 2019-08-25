@@ -1,0 +1,7 @@
+java \
+  -classpath "druid/lib/*" \
+  -Ddruid.extensions.directory="druid/extensions" \
+  -Ddruid.extensions.hadoopDependenciesDir="druid/hadoop-dependencies" \
+  org.apache.druid.cli.Main tools pull-deps \
+  --no-default-hadoop \
+  -c "org.apache.druid.extensions.contrib:druid-distinctcount:0.15.1-incubating"

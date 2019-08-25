@@ -1,5 +1,21 @@
 #!/bin/bash -e
 
-echo "---> RUNning conatiner..."
+echo "---> RUNning conatiner... $mode"
 
-exec /app/druid/bin/start-micro-quickstart
+case $mode in
+    "usage")
+        echo "Usage!"
+        /usr/libexec/s2i/usage
+        exit 0
+        ;;
+    "micro")
+        exec /app/druid/bin/start-micro-quickstart
+        ;;
+    "none")
+        exec /bin/bash
+        ;;
+    *)
+        echo "Running bash"
+        exec /bin/bash
+        ;;
+esac

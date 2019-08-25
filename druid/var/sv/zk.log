@@ -1,0 +1,61 @@
+2019-08-25 18:33:42,082 INFO [main] org.apache.zookeeper.server.quorum.QuorumPeerConfig - Reading configuration from: /Volumes/SSD/opensource/s2i-druid/druid/conf/zk/zoo.cfg
+2019-08-25 18:33:42,117 INFO [main] org.apache.zookeeper.server.DatadirCleanupManager - autopurge.snapRetainCount set to 5
+2019-08-25 18:33:42,117 INFO [main] org.apache.zookeeper.server.DatadirCleanupManager - autopurge.purgeInterval set to 1
+2019-08-25 18:33:42,120 INFO [PurgeTask] org.apache.zookeeper.server.DatadirCleanupManager - Purge task started.
+2019-08-25 18:33:42,121 WARN [main] org.apache.zookeeper.server.quorum.QuorumPeerMain - Either no config or no quorum defined in config, running  in standalone mode
+2019-08-25 18:33:42,127 INFO [PurgeTask] org.apache.zookeeper.server.DatadirCleanupManager - Purge task completed.
+2019-08-25 18:33:42,399 INFO [main] org.apache.zookeeper.server.quorum.QuorumPeerConfig - Reading configuration from: /Volumes/SSD/opensource/s2i-druid/druid/conf/zk/zoo.cfg
+2019-08-25 18:33:42,399 INFO [main] org.apache.zookeeper.server.ZooKeeperServerMain - Starting server
+2019-08-25 18:33:42,530 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:zookeeper.version=3.4.11-37e277162d567b55a07d1755f0b31c32e93c01a0, built on 11/01/2017 18:06 GMT
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:host.name=irfis-imac.home
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.version=1.8.0_222
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.vendor=Amazon.com Inc.
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.home=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home/jre
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.class.path=/Volumes/SSD/opensource/s2i-druid/druid/bin/../zk/lib/audience-annotations-0.5.0.jar:/Volumes/SSD/opensource/s2i-druid/druid/bin/../zk/lib/jline-0.9.94.jar:/Volumes/SSD/opensource/s2i-druid/druid/bin/../zk/lib/log4j-1.2.16.jar:/Volumes/SSD/opensource/s2i-druid/druid/bin/../zk/lib/netty-3.10.5.Final.jar:/Volumes/SSD/opensource/s2i-druid/druid/bin/../zk/lib/slf4j-api-1.6.1.jar:/Volumes/SSD/opensource/s2i-druid/druid/bin/../zk/lib/slf4j-log4j12-1.6.1.jar:/Volumes/SSD/opensource/s2i-druid/druid/bin/../zk/zookeeper-3.4.11.jar:/Volumes/SSD/opensource/s2i-druid/druid/conf/zk
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.library.path=/Users/irfius/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.io.tmpdir=/var/folders/hk/2c2_7mks7hs86bnz9m3lfr2c0000gn/T/
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:java.compiler=<NA>
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.name=Mac OS X
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.arch=x86_64
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:os.version=10.14.6
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:user.name=irfius
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:user.home=/Users/irfius
+2019-08-25 18:33:42,531 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - Server environment:user.dir=/Volumes/SSD/opensource/s2i-druid/druid
+2019-08-25 18:33:42,533 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - tickTime set to 2000
+2019-08-25 18:33:42,533 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - minSessionTimeout set to -1
+2019-08-25 18:33:42,533 INFO [main] org.apache.zookeeper.server.ZooKeeperServer - maxSessionTimeout set to -1
+2019-08-25 18:33:42,549 INFO [main] org.apache.zookeeper.server.ServerCnxnFactory - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2019-08-25 18:33:42,565 INFO [main] org.apache.zookeeper.server.NIOServerCnxnFactory - binding to port 0.0.0.0/0.0.0.0:2181
+2019-08-25 18:33:51,266 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxnFactory - Accepted socket connection from /127.0.0.1:51645
+2019-08-25 18:33:51,317 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.ZooKeeperServer - Client attempting to establish new session at /127.0.0.1:51645
+2019-08-25 18:33:51,318 INFO [SyncThread:0] org.apache.zookeeper.server.persistence.FileTxnLog - Creating new log file: log.1
+2019-08-25 18:33:51,346 INFO [SyncThread:0] org.apache.zookeeper.server.ZooKeeperServer - Established session 0x10000724be00000 with negotiated timeout 30000 for client /127.0.0.1:51645
+2019-08-25 18:33:51,376 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Got user-level KeeperException when processing sessionid:0x10000724be00000 type:create cxid:0x2 zxid:0x2 txntype:-1 reqpath:n/a Error Path:/druid/indexer/tasks Error:KeeperErrorCode = NoNode for /druid/indexer/tasks
+2019-08-25 18:33:51,390 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Got user-level KeeperException when processing sessionid:0x10000724be00000 type:create cxid:0xb zxid:0x7 txntype:-1 reqpath:n/a Error Path:/druid/indexer/status Error:KeeperErrorCode = NoNode for /druid/indexer/status
+2019-08-25 18:33:52,015 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxnFactory - Accepted socket connection from /127.0.0.1:51646
+2019-08-25 18:33:52,022 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.ZooKeeperServer - Client attempting to establish new session at /127.0.0.1:51646
+2019-08-25 18:33:52,041 INFO [SyncThread:0] org.apache.zookeeper.server.ZooKeeperServer - Established session 0x10000724be00001 with negotiated timeout 30000 for client /127.0.0.1:51646
+2019-08-25 18:33:52,975 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxnFactory - Accepted socket connection from /0:0:0:0:0:0:0:1:51647
+2019-08-25 18:33:52,982 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.ZooKeeperServer - Client attempting to establish new session at /0:0:0:0:0:0:0:1:51647
+2019-08-25 18:33:53,002 INFO [SyncThread:0] org.apache.zookeeper.server.ZooKeeperServer - Established session 0x10000724be00002 with negotiated timeout 30000 for client /0:0:0:0:0:0:0:1:51647
+2019-08-25 18:33:53,858 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Got user-level KeeperException when processing sessionid:0x10000724be00001 type:create cxid:0x1a zxid:0x17 txntype:-1 reqpath:n/a Error Path:/druid/discovery/druid:router Error:KeeperErrorCode = NoNode for /druid/discovery/druid:router
+2019-08-25 18:33:54,433 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxnFactory - Accepted socket connection from /127.0.0.1:51649
+2019-08-25 18:33:54,448 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.ZooKeeperServer - Client attempting to establish new session at /127.0.0.1:51649
+2019-08-25 18:33:54,468 INFO [SyncThread:0] org.apache.zookeeper.server.ZooKeeperServer - Established session 0x10000724be00003 with negotiated timeout 30000 for client /127.0.0.1:51649
+2019-08-25 18:33:54,540 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxnFactory - Accepted socket connection from /127.0.0.1:51650
+2019-08-25 18:33:54,549 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.ZooKeeperServer - Client attempting to establish new session at /127.0.0.1:51650
+2019-08-25 18:33:54,569 INFO [SyncThread:0] org.apache.zookeeper.server.ZooKeeperServer - Established session 0x10000724be00004 with negotiated timeout 30000 for client /127.0.0.1:51650
+2019-08-25 18:33:55,129 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Got user-level KeeperException when processing sessionid:0x10000724be00002 type:create cxid:0x10 zxid:0x25 txntype:-1 reqpath:n/a Error Path:/druid/coordinator/_COORDINATOR Error:KeeperErrorCode = NoNode for /druid/coordinator/_COORDINATOR
+2019-08-25 18:33:55,262 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Got user-level KeeperException when processing sessionid:0x10000724be00002 type:create cxid:0x2b zxid:0x2c txntype:-1 reqpath:n/a Error Path:/druid/overlord/_OVERLORD Error:KeeperErrorCode = NoNode for /druid/overlord/_OVERLORD
+2019-08-25 18:33:56,349 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Got user-level KeeperException when processing sessionid:0x10000724be00004 type:create cxid:0x22 zxid:0x31 txntype:-1 reqpath:n/a Error Path:/druid/listeners/lookups Error:KeeperErrorCode = NoNode for /druid/listeners/lookups
+2019-08-25 18:33:56,580 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Got user-level KeeperException when processing sessionid:0x10000724be00004 type:create cxid:0x46 zxid:0x3b txntype:-1 reqpath:n/a Error Path:/druid/discovery/druid:broker Error:KeeperErrorCode = NoNode for /druid/discovery/druid:broker
+2019-08-25 18:36:46,000 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Processed session termination for sessionid: 0x10000724be00000
+2019-08-25 18:36:46,002 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxn - Closed socket connection for client /127.0.0.1:51645 which had sessionid 0x10000724be00000
+2019-08-25 18:36:46,115 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Processed session termination for sessionid: 0x10000724be00003
+2019-08-25 18:36:46,117 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxn - Closed socket connection for client /127.0.0.1:51649 which had sessionid 0x10000724be00003
+2019-08-25 18:36:46,125 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Processed session termination for sessionid: 0x10000724be00001
+2019-08-25 18:36:46,126 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxn - Closed socket connection for client /127.0.0.1:51646 which had sessionid 0x10000724be00001
+2019-08-25 18:36:46,179 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Processed session termination for sessionid: 0x10000724be00004
+2019-08-25 18:36:46,179 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxn - Closed socket connection for client /127.0.0.1:51650 which had sessionid 0x10000724be00004
+2019-08-25 18:36:46,209 INFO [ProcessThread(sid:0 cport:2181):] org.apache.zookeeper.server.PrepRequestProcessor - Processed session termination for sessionid: 0x10000724be00002
+2019-08-25 18:36:46,210 INFO [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181] org.apache.zookeeper.server.NIOServerCnxn - Closed socket connection for client /0:0:0:0:0:0:0:1:51647 which had sessionid 0x10000724be00002

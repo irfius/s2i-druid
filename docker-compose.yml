@@ -46,12 +46,12 @@ services:
       - druid_indexer_runner_javaOptsArray=["-server", "-Xmx1g", "-Xms1g", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
       - druid_indexer_fork_property_druid_processing_buffer_sizeBytes=268435456
       - druid.storage.type=s3
-      - druid.storage.bucket=your-bucket
+      - druid.storage.bucket=$DRUID_STORAGE_BUCKET
       - druid.storage.baseKey=druid/segments
-      - druid.s3.accessKey=
-      - druid.s3.secretKey=
+      - druid.s3.accessKey=$S3_ACCESS_KEY
+      - druid.s3.secretKey=$S#_SECRET_KEY
       - druid.indexer.logs.type=s3
-      - druid.indexer.logs.s3Bucket=your-bucket
+      - druid.indexer.logs.s3Bucket=$S3_LOG_BUCKET
       - druid.indexer.logs.s3Prefix=druid/indexing-logs
     depends_on:
       - druid-postgres
@@ -85,12 +85,12 @@ services:
       - druid_indexer_runner_javaOptsArray=["-server", "-Xmx1g", "-Xms1g", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
       - druid_indexer_fork_property_druid_processing_buffer_sizeBytes=268435456
       - druid.storage.type=s3
-      - druid.storage.bucket=your-bucket
+      - druid.storage.bucket=$DRUID_STORAGE_BUCKET
       - druid.storage.baseKey=druid/segments
-      - druid.s3.accessKey=
-      - druid.s3.secretKey=
+      - druid.s3.accessKey=$S3_ACCESS_KEY
+      - druid.s3.secretKey=$S#_SECRET_KEY
       - druid.indexer.logs.type=s3
-      - druid.indexer.logs.s3Bucket=your-bucket
+      - druid.indexer.logs.s3Bucket=$S3_LOG_BUCKET
       - druid.indexer.logs.s3Prefix=druid/indexing-logs
     depends_on:
       - druid-postgres
@@ -126,12 +126,12 @@ services:
       - druid_indexer_runner_javaOptsArray=["-server", "-Xmx1g", "-Xms1g", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
       - druid_indexer_fork_property_druid_processing_buffer_sizeBytes=268435456
       - druid.storage.type=s3
-      - druid.storage.bucket=your-bucket
+      - druid.storage.bucket=$DRUID_STORAGE_BUCKET
       - druid.storage.baseKey=druid/segments
-      - druid.s3.accessKey=
-      - druid.s3.secretKey=
+      - druid.s3.accessKey=$S3_ACCESS_KEY
+      - druid.s3.secretKey=$S#_SECRET_KEY
       - druid.indexer.logs.type=s3
-      - druid.indexer.logs.s3Bucket=your-bucket
+      - druid.indexer.logs.s3Bucket=$S3_LOG_BUCKET
       - druid.indexer.logs.s3Prefix=druid/indexing-logs
     depends_on:
       - druid-postgres

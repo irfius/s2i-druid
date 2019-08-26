@@ -45,10 +45,14 @@ services:
       - druid_coordinator_balancer_strategy=cachingCost
       - druid_indexer_runner_javaOptsArray=["-server", "-Xmx1g", "-Xms1g", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
       - druid_indexer_fork_property_druid_processing_buffer_sizeBytes=268435456
-      - druid_storage_type=hdfs
-      - druid.storage.storageDirectory=/druid/segments
-      - druid.indexer.logs.type=hdfs
-      - druid.indexer.logs.directory=/druid/indexing-logs
+      - druid.storage.type=s3
+      - druid.storage.bucket=your-bucket
+      - druid.storage.baseKey=druid/segments
+      - druid.s3.accessKey=
+      - druid.s3.secretKey=
+      - druid.indexer.logs.type=s3
+      - druid.indexer.logs.s3Bucket=your-bucket
+      - druid.indexer.logs.s3Prefix=druid/indexing-logs
     depends_on:
       - druid-postgres
       - druid-zookeeper
@@ -80,10 +84,14 @@ services:
       - druid_coordinator_balancer_strategy=cachingCost
       - druid_indexer_runner_javaOptsArray=["-server", "-Xmx1g", "-Xms1g", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
       - druid_indexer_fork_property_druid_processing_buffer_sizeBytes=268435456
-      - druid_storage_type=hdfs
-      - druid.storage.storageDirectory=/druid/segments
-      - druid.indexer.logs.type=hdfs
-      - druid.indexer.logs.directory=/druid/indexing-logs
+      - druid.storage.type=s3
+      - druid.storage.bucket=your-bucket
+      - druid.storage.baseKey=druid/segments
+      - druid.s3.accessKey=
+      - druid.s3.secretKey=
+      - druid.indexer.logs.type=s3
+      - druid.indexer.logs.s3Bucket=your-bucket
+      - druid.indexer.logs.s3Prefix=druid/indexing-logs
     depends_on:
       - druid-postgres
       - druid-zookeeper
@@ -117,10 +125,14 @@ services:
       - druid_coordinator_balancer_strategy=cachingCost
       - druid_indexer_runner_javaOptsArray=["-server", "-Xmx1g", "-Xms1g", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
       - druid_indexer_fork_property_druid_processing_buffer_sizeBytes=268435456
-      - druid_storage_type=hdfs
-      - druid.storage.storageDirectory=/druid/segments
-      - druid.indexer.logs.type=hdfs
-      - druid.indexer.logs.directory=/druid/indexing-logs
+      - druid.storage.type=s3
+      - druid.storage.bucket=your-bucket
+      - druid.storage.baseKey=druid/segments
+      - druid.s3.accessKey=
+      - druid.s3.secretKey=
+      - druid.indexer.logs.type=s3
+      - druid.indexer.logs.s3Bucket=your-bucket
+      - druid.indexer.logs.s3Prefix=druid/indexing-logs
     depends_on:
       - druid-postgres
       - druid-zookeeper

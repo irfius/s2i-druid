@@ -1,0 +1,75 @@
+version: "3"
+
+volumes:
+  metadata_data: {}
+  data_var: {}
+  query_var: {}
+  master-with-zk_var: {}
+
+services:
+  druid-postgres:
+    image: centos/postgresql-10-centos7:1
+    volumes:
+      - metadata_data:/var/lib/pgsql/data:Z
+    environment:
+      - POSTGRESQL_USER=druid_user
+      - POSTGRESQL_PASSWORD=druid_password
+      - POSTGRESQL_DATABASE=druid
+    ports: 
+      - "5432:5432"
+  druid-zookeeper:
+    image: bitnami/zookeeper:3.5.5
+    ports:
+      - "2181:2181"
+    environment:
+      - ZOO_MY_ID=1
+  druid-master-with-zk: #coordinator/overlord
+    image: irfius/s2i-druid:0.15.1
+    volumes:
+      - master-with-zk_var:/app/druid/var
+    environment:
+      - cluster=master-with-zk
+      - druid_emitter_logging_logLevel=debug
+    depends_on:
+      - druid-postgres
+      - druid-zookeeper
+    links:
+      - druid-postgres
+      - druid-zookeeper
+    ports:
+      - "8090:8090"
+      - "8081:8081"
+  druid-query: #broker/router
+    image: irfius/s2i-druid:0.15.1
+    volumes: 
+      - query_var:/app/druid/var
+    environment:
+      - cluster=query
+    depends_on:
+      - druid-postgres
+      - druid-zookeeper
+      - druid-master-with-zk
+    links:
+      - druid-postgres
+      - druid-zookeeper
+      - druid-master-with-zk
+    ports:
+      - "8082:8082"
+      - "8888:8888"
+  druid-data: #historical/middleManager
+    image: irfius/s2i-druid:0.15.1
+    volumes: 
+      - data_var:/app/druid/var
+    environment:
+      - cluster=data
+    depends_on:
+      - druid-postgres
+      - druid-zookeeper
+      - druid-master-with-zk
+    links:
+      - druid-postgres
+      - druid-zookeeper
+      - druid-master-with-zk
+    ports:
+      - "8083:8083"
+      - "8091:8091"

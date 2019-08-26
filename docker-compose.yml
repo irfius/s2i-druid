@@ -40,18 +40,18 @@ services:
       - druid_metadata_storage_host=druid-postgres
       - druid_metadata_storage_type=postgresql
       - druid_metadata_storage_connector_connectURI=jdbc:postgresql://druid-postgres:5432/druid
-      - druid_metadata_storage_connector_user=druid
+      - druid_metadata_storage_connector_user=druid_user
       - druid_metadata_storage_connector_password=FoolishPassword
       - druid_coordinator_balancer_strategy=cachingCost
-      - druid_indexer_runner_javaOptsArray=["-server", "-Xmx1g", "-Xms1g", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
+      - druid_indexer_runner_javaOptsArray=["-server", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
       - druid_indexer_fork_property_druid_processing_buffer_sizeBytes=268435456
       - druid.storage.type=s3
-      - druid.storage.bucket=$DRUID_STORAGE_BUCKET
+      - druid.storage.bucket=$$DRUID_STORAGE_BUCKET
       - druid.storage.baseKey=druid/segments
-      - druid.s3.accessKey=$S3_ACCESS_KEY
-      - druid.s3.secretKey=$S3_SECRET_KEY
+      - druid.s3.accessKey=$$S3_ACCESS_KEY
+      - druid.s3.secretKey=$$S3_SECRET_KEY
       - druid.indexer.logs.type=s3
-      - druid.indexer.logs.s3Bucket=$DRUID_LOG_BUCKET
+      - druid.indexer.logs.s3Bucket=$$DRUID_LOG_BUCKET
       - druid.indexer.logs.s3Prefix=druid/indexing-logs
     depends_on:
       - druid-postgres
@@ -82,15 +82,15 @@ services:
       - druid_metadata_storage_connector_user=druid
       - druid_metadata_storage_connector_password=FoolishPassword
       - druid_coordinator_balancer_strategy=cachingCost
-      - druid_indexer_runner_javaOptsArray=["-server", "-Xmx1g", "-Xms1g", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
+      - druid_indexer_runner_javaOptsArray=["-server", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
       - druid_indexer_fork_property_druid_processing_buffer_sizeBytes=268435456
       - druid.storage.type=s3
-      - druid.storage.bucket=$DRUID_STORAGE_BUCKET
+      - druid.storage.bucket=$$DRUID_STORAGE_BUCKET
       - druid.storage.baseKey=druid/segments
-      - druid.s3.accessKey=$S3_ACCESS_KEY
-      - druid.s3.secretKey=$S3_SECRET_KEY
+      - druid.s3.accessKey=$$S3_ACCESS_KEY
+      - druid.s3.secretKey=$$S3_SECRET_KEY
       - druid.indexer.logs.type=s3
-      - druid.indexer.logs.s3Bucket=$DRUID_LOG_BUCKET
+      - druid.indexer.logs.s3Bucket=$$DRUID_LOG_BUCKET
       - druid.indexer.logs.s3Prefix=druid/indexing-logs
     depends_on:
       - druid-postgres
@@ -123,15 +123,15 @@ services:
       - druid_metadata_storage_connector_user=druid
       - druid_metadata_storage_connector_password=FoolishPassword
       - druid_coordinator_balancer_strategy=cachingCost
-      - druid_indexer_runner_javaOptsArray=["-server", "-Xmx1g", "-Xms1g", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
+      - druid_indexer_runner_javaOptsArray=["-server", "-XX:MaxDirectMemorySize=3g", "-Duser.timezone=UTC", "-Dfile.encoding=UTF-8", "-Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager"]
       - druid_indexer_fork_property_druid_processing_buffer_sizeBytes=268435456
       - druid.storage.type=s3
-      - druid.storage.bucket=$DRUID_STORAGE_BUCKET
+      - druid.storage.bucket=$$DRUID_STORAGE_BUCKET
       - druid.storage.baseKey=druid/segments
-      - druid.s3.accessKey=$S3_ACCESS_KEY
-      - druid.s3.secretKey=$S3_SECRET_KEY
+      - druid.s3.accessKey=$$S3_ACCESS_KEY
+      - druid.s3.secretKey=$$S3_SECRET_KEY
       - druid.indexer.logs.type=s3
-      - druid.indexer.logs.s3Bucket=$DRUID_LOG_BUCKET
+      - druid.indexer.logs.s3Bucket=$$DRUID_LOG_BUCKET
       - druid.indexer.logs.s3Prefix=druid/indexing-logs
     depends_on:
       - druid-postgres

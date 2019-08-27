@@ -17,9 +17,10 @@ COPY .s2i/bin/ /usr/libexec/s2i
 
 RUN rpm --import /etc/pki/rpm-gpg/* && \
     yum -y update && \
-    yum -y install java-1.8.0-openjdk which && \
+    yum -y install java-1.8.0-openjdk perl && \
     yum -y clean all --enablerepo='*' && \
     mkdir -p druid && \
+    mkdir -p druid/var && \
     chown -R 1001:1001 /app
 
 USER 1001

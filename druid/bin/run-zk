@@ -30,7 +30,7 @@ if [ "$#" -lt 1 ] || [ "x$1" = "x" ]
 then
   CONFDIR="$WHEREAMI"/../conf
 else
-  CONFDIR="$1"
+  CONFDIR="$1" #/app/druid/conf/
 fi
 
 CONFDIR="$(cd "$CONFDIR" && pwd)/zk"

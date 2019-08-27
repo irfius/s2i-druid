@@ -23,6 +23,7 @@ services:
       - "2181:2181"
     environment:
       - ZOO_MY_ID=1
+      - ALLOW_ANONYMOUS_LOGIN=yes
   druid-master-with-zk: #coordinator/overlord
     image: irfius/s2i-druid:0.15.1
     volumes:

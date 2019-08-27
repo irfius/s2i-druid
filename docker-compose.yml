@@ -35,7 +35,6 @@ services:
       - DRUID_MAXNEWSIZE=250m
       - DRUID_NEWSIZE=250m
       - DRUID_MAXDIRECTMEMORYSIZE=6172m
-      - druid_emitter_logging_logLevel=debug
       - druid_zk_service_host=druid-zookeeper
       - druid_metadata_storage_host=druid-postgres
       - druid_metadata_storage_type=postgresql
@@ -74,7 +73,6 @@ services:
       - DRUID_MAXNEWSIZE=250m
       - DRUID_NEWSIZE=250m
       - DRUID_MAXDIRECTMEMORYSIZE=6172m
-      - druid_emitter_logging_logLevel=debug
       - druid_zk_service_host=druid-zookeeper
       - druid_metadata_storage_host=druid-postgres
       - druid_metadata_storage_type=postgresql
@@ -115,7 +113,6 @@ services:
       - DRUID_MAXNEWSIZE=250m
       - DRUID_NEWSIZE=250m
       - DRUID_MAXDIRECTMEMORYSIZE=6172m
-      - druid_emitter_logging_logLevel=debug
       - druid_zk_service_host=druid-zookeeper
       - druid_metadata_storage_host=druid-postgres
       - druid_metadata_storage_type=postgresql

@@ -2,6 +2,8 @@
 
 echo "---> RUNning conatiner... $cluster"
 
+sed -i 's/druid.zk.service.host=localhost/druid.zk.service.host='
+
 case $cluster in
     "usage")
         echo "Usage!"
@@ -9,24 +11,26 @@ case $cluster in
         exit 0
         ;;
     "coordinator-overlord")
+        echo "Copying env variables..."
+
         echo "Running coordinator-overlord..."
-        exec /app/druid/bin/start-coordinator-overlord-large
+        exec /app/druid/bin/start-coordinator-overlord-small
         ;;
     "broker")
         echo "Running broker..."
-        exec /app/druid/bin/start-broker-large
+        exec /app/druid/bin/start-broker-small
         ;;
     "historical")
         echo "Running historical..."
-        exec /app/druid/bin/start-historical-large
+        exec /app/druid/bin/start-historical-small
         ;;
     "middlemanager")
         echo "Running middlemanager"
-        exec /app/druid/bin/start-middleManager-large
+        exec /app/druid/bin/start-middleManager-small
         ;;
     "router")
         echo "Running router..."
-        exec /app/druid/bin/start-router-large
+        exec /app/druid/bin/start-router-small
         ;;
     *)
         echo "Running bash..."

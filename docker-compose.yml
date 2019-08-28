@@ -41,6 +41,7 @@ services:
       - S3_LOGS_BUCKET=druid.indexer.logs.s3Bucket=$$DRUID_LOGS_BUCKET
       - S3_ACCESS_KEY=druid.s3.accessKey=$$S3_ACCESS_KEY
       - S3_SECRET_KEY=druid.s3.secretKey=$$S3_SECRET_KEY
+      - AWS_REGION=-Daws.region=$$AWS_REGION
     depends_on:
       - druid-postgres
       - druid-zookeeper
@@ -55,6 +56,16 @@ services:
       - broker_var:/app/druid/var
     environment:
       - cluster=broker
+      - DRUID_HOST=druid.host=druid-broker
+      - ZK_HOST=druid.zk.service.host=druid-zookeeper
+      - PG_URL=druid.metadata.storage.connector.connectURI=jdbc:postgresql://druid-postgres:5432/druid
+      - PG_USER=druid.metadata.storage.connector.user=druid_user
+      - PG_PASSWORD=druid.metadata.storage.connector.password=FoolishPassword
+      - S3_STORAGE_BUCKET=druid.storage.bucket=$$DRUID_STORAGE_BUCKET
+      - S3_LOGS_BUCKET=druid.indexer.logs.s3Bucket=$$DRUID_LOGS_BUCKET
+      - S3_ACCESS_KEY=druid.s3.accessKey=$$S3_ACCESS_KEY
+      - S3_SECRET_KEY=druid.s3.secretKey=$$S3_SECRET_KEY
+      - AWS_REGION=-Daws.region=$$AWS_REGION
     depends_on:
       - druid-postgres
       - druid-zookeeper
@@ -71,6 +82,16 @@ services:
       - historical_var:/app/druid/var
     environment:
       - cluster=historical
+      - DRUID_HOST=druid.host=druid-historical
+      - ZK_HOST=druid.zk.service.host=druid-zookeeper
+      - PG_URL=druid.metadata.storage.connector.connectURI=jdbc:postgresql://druid-postgres:5432/druid
+      - PG_USER=druid.metadata.storage.connector.user=druid_user
+      - PG_PASSWORD=druid.metadata.storage.connector.password=FoolishPassword
+      - S3_STORAGE_BUCKET=druid.storage.bucket=$$DRUID_STORAGE_BUCKET
+      - S3_LOGS_BUCKET=druid.indexer.logs.s3Bucket=$$DRUID_LOGS_BUCKET
+      - S3_ACCESS_KEY=druid.s3.accessKey=$$S3_ACCESS_KEY
+      - S3_SECRET_KEY=druid.s3.secretKey=$$S3_SECRET_KEY
+      - AWS_REGION=-Daws.region=$$AWS_REGION
     depends_on:
       - druid-postgres
       - druid-zookeeper
@@ -87,6 +108,17 @@ services:
       - middlemanager_var:/app/druid/var
     environment:
       - cluster=middlemanager
+      - JAVA_OPTS=druid.indexer.runner.javaOpts=-server -Xms1g -Xmx1g -XX:MaxDirectMemorySize=1g -Daws.region=$$AWS_REGION -Duser.timezone=UTC -Dfile.encoding=UTF-8 -XX:+ExitOnOutOfMemoryError -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager
+      - DRUID_HOST=druid.host=druid-middlemanager
+      - ZK_HOST=druid.zk.service.host=druid-zookeeper
+      - PG_URL=druid.metadata.storage.connector.connectURI=jdbc:postgresql://druid-postgres:5432/druid
+      - PG_USER=druid.metadata.storage.connector.user=druid_user
+      - PG_PASSWORD=druid.metadata.storage.connector.password=FoolishPassword
+      - S3_STORAGE_BUCKET=druid.storage.bucket=$$DRUID_STORAGE_BUCKET
+      - S3_LOGS_BUCKET=druid.indexer.logs.s3Bucket=$$DRUID_LOGS_BUCKET
+      - S3_ACCESS_KEY=druid.s3.accessKey=$$S3_ACCESS_KEY
+      - S3_SECRET_KEY=druid.s3.secretKey=$$S3_SECRET_KEY
+      - AWS_REGION=-Daws.region=$$AWS_REGION
     depends_on:
       - druid-postgres
       - druid-zookeeper
@@ -103,6 +135,16 @@ services:
       - router_var:/app/druid/var
     environment:
       - cluster=router
+      - DRUID_HOST=druid.host=druid-router
+      - ZK_HOST=druid.zk.service.host=druid-zookeeper
+      - PG_URL=druid.metadata.storage.connector.connectURI=jdbc:postgresql://druid-postgres:5432/druid
+      - PG_USER=druid.metadata.storage.connector.user=druid_user
+      - PG_PASSWORD=druid.metadata.storage.connector.password=FoolishPassword
+      - S3_STORAGE_BUCKET=druid.storage.bucket=$$DRUID_STORAGE_BUCKET
+      - S3_LOGS_BUCKET=druid.indexer.logs.s3Bucket=$$DRUID_LOGS_BUCKET
+      - S3_ACCESS_KEY=druid.s3.accessKey=$$S3_ACCESS_KEY
+      - S3_SECRET_KEY=druid.s3.secretKey=$$S3_SECRET_KEY
+      - AWS_REGION=-Daws.region=$$AWS_REGION
     depends_on:
       - druid-postgres
       - druid-zookeeper

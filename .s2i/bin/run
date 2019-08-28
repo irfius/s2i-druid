@@ -1,8 +1,12 @@
 #!/bin/bash -e
 
-echo "---> RUNning conatiner... $cluster"
 
-sed -i 's/druid.zk.service.host=localhost/druid.zk.service.host='
+echo "--->Copying env variables..."
+sed -i 's/druid.zk.service.host=localhost/druid.zk.service.host='$fdff''
+echo "$blah" >> druid/conf/druid/single-server/small/middleManager/jvm.config
+
+
+echo "---> RUNning conatiner... $cluster"
 
 case $cluster in
     "usage")
@@ -11,8 +15,6 @@ case $cluster in
         exit 0
         ;;
     "coordinator-overlord")
-        echo "Copying env variables..."
-
         echo "Running coordinator-overlord..."
         exec /app/druid/bin/start-coordinator-overlord-small
         ;;

@@ -40,7 +40,7 @@ case $NODE in
         ;;
     "middlemanager")
         echo "Setting middleManager javaOpts... "
-        sed -i 's/druid.indexer.runner.javaOpts=/'$JAVA_OPTS'' druid/conf/druid/single-server/small/middleManager/runtime.properties
+        sed -i 's/druid.indexer.runner.javaOpts=/'$JAVA_OPTS'/' druid/conf/druid/single-server/small/middleManager/runtime.properties
         echo "Running middleManager"
         exec /app/druid/bin/start-middleManager-small
         ;;

@@ -2,13 +2,25 @@
 
 
 echo "--->Copying env variables..."
-sed -i 's/druid.zk.service.host=localhost/druid.zk.service.host='$fdff''
-echo "$blah" >> druid/conf/druid/single-server/small/middleManager/jvm.config
+sed -i 's/druid.host=/'$DRUID_HOST'' druid/conf/druid/single-server/small/_common/common.runtime.properties
+sed -i 's/druid.zk.service.host=/'$ZK_HOST'' druid/conf/druid/single-server/small/_common/common.runtime.properties
+sed -i 's/druid.metadata.storage.connector.connectURI=/'$PG_URL'' druid/conf/druid/single-server/small/_common/common.runtime.properties
+sed -i 's/druid.metadata.storage.connector.user=/'$PG_USER'' druid/conf/druid/single-server/small/_common/common.runtime.properties
+sed -i 's/druid.metadata.storage.connector.password=/'$PG_PASSWORD'' druid/conf/druid/single-server/small/_common/common.runtime.properties\
+sed -i 's/druid.storage.bucket=/'$S3_STORAGE_BUCKET'' druid/conf/druid/single-server/small/_common/common.runtime.properties
+sed -i 's/druid.s3.accessKey=/'$S3_ACCESS_KEY'' druid/conf/druid/single-server/small/_common/common.runtime.properties
+sed -i 's/druid.s3.secretKey=/'$S3_SECRET_KEY'' druid/conf/druid/single-server/small/_common/common.runtime.properties
+sed -i 's/druid.indexer.logs.s3Bucket=/'$S3_LOGS_BUCKET'' druid/conf/druid/single-server/small/_common/common.runtime.properties
+echo "$AWS_REGION" >> druid/conf/druid/single-server/small/broker/jvm.config
+echo "$AWS_REGION" >> druid/conf/druid/single-server/small/coordinator-overlord/jvm.config
+echo "$AWS_REGION" >> druid/conf/druid/single-server/small/historical/jvm.config
+echo "$AWS_REGION" >> druid/conf/druid/single-server/small/middleManager/jvm.config
+echo "$AWS_REGION" >> druid/conf/druid/single-server/small/router/jvm.config
 
 
-echo "---> RUNning conatiner... $cluster"
+echo "---> RUNning conatiner... $NODE"
 
-case $cluster in
+case $NODE in
     "usage")
         echo "Usage!"
         /usr/libexec/s2i/usage
@@ -27,7 +39,9 @@ case $cluster in
         exec /app/druid/bin/start-historical-small
         ;;
     "middlemanager")
-        echo "Running middlemanager"
+        echo "Setting middleManager javaOpts... "
+        sed -i 's/druid.indexer.runner.javaOpts=/'$JAVA_OPTS'' druid/conf/druid/single-server/small/middleManager/runtime.properties
+        echo "Running middleManager"
         exec /app/druid/bin/start-middleManager-small
         ;;
     "router")

@@ -31,7 +31,7 @@ services:
     volumes:
       - coordinator-overlord_var:/app/druid/var
     environment:
-      - cluster=coordinator-overlord
+      - NODE=coordinator-overlord
       - DRUID_HOST=druid.host=druid-coordinator-overlord
       - ZK_HOST=druid.zk.service.host=druid-zookeeper
       - PG_URL=druid.metadata.storage.connector.connectURI=jdbc:postgresql://druid-postgres:5432/druid
@@ -55,7 +55,7 @@ services:
     volumes: 
       - broker_var:/app/druid/var
     environment:
-      - cluster=broker
+      - NODE=broker
       - DRUID_HOST=druid.host=druid-broker
       - ZK_HOST=druid.zk.service.host=druid-zookeeper
       - PG_URL=druid.metadata.storage.connector.connectURI=jdbc:postgresql://druid-postgres:5432/druid
@@ -81,7 +81,7 @@ services:
     volumes: 
       - historical_var:/app/druid/var
     environment:
-      - cluster=historical
+      - NODE=historical
       - DRUID_HOST=druid.host=druid-historical
       - ZK_HOST=druid.zk.service.host=druid-zookeeper
       - PG_URL=druid.metadata.storage.connector.connectURI=jdbc:postgresql://druid-postgres:5432/druid
@@ -107,7 +107,7 @@ services:
     volumes: 
       - middlemanager_var:/app/druid/var
     environment:
-      - cluster=middlemanager
+      - NODE=middlemanager
       - JAVA_OPTS=druid.indexer.runner.javaOpts=-server -Xms1g -Xmx1g -XX:MaxDirectMemorySize=1g -Daws.region=$$AWS_REGION -Duser.timezone=UTC -Dfile.encoding=UTF-8 -XX:+ExitOnOutOfMemoryError -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager
       - DRUID_HOST=druid.host=druid-middlemanager
       - ZK_HOST=druid.zk.service.host=druid-zookeeper
@@ -134,7 +134,7 @@ services:
     volumes: 
       - router_var:/app/druid/var
     environment:
-      - cluster=router
+      - NODE=router
       - DRUID_HOST=druid.host=druid-router
       - ZK_HOST=druid.zk.service.host=druid-zookeeper
       - PG_URL=druid.metadata.storage.connector.connectURI=jdbc:postgresql://druid-postgres:5432/druid
